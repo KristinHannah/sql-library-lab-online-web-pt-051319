@@ -30,17 +30,6 @@ def select_name_and_series_subgenres_of_authors
   "
 end
 
-
-#SELECT 
-#FROM
-#JOIN
-#  ON
-#WHERE
-#GROUP BY
-#HAVING
-#ORDER BY
-#LIMIT
-
 def select_series_title_with_most_human_characters
   "SELECT series.title
   FROM characters
@@ -51,6 +40,16 @@ def select_series_title_with_most_human_characters
   LIMIT 1;
   "
 end
+    
+    #SELECT 
+#FROM
+#JOIN
+#  ON
+#WHERE
+#GROUP BY
+#HAVING
+#ORDER BY
+#LIMIT
     
 def select_character_names_and_number_of_books_they_are_in
   "SELECT characters.name, COUNT(character_books.id)
