@@ -50,9 +50,11 @@ end
 #HAVING
 #ORDER BY
 #LIMIT
+
+count(IF(Position = 'Manager', 1, NULL)) as ManagerCount
     
 def select_character_names_and_number_of_books_they_are_in
-  "SELECT characters.name, COUNT(character_books.id)
+  "SELECT characters.name, COUNT(IF(characters.id = character_books.character_id, 1, NULL)) AS book_count
   FROM character_books
   INNER JOIN characters
   ON characters.id = character_books.character_id
