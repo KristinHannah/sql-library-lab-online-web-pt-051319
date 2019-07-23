@@ -42,13 +42,12 @@ end
 #LIMIT
 
 def select_series_title_with_most_human_characters
-  "SELECT series.title, COUNT(characters.species) AS species_occurrence
+  "SELECT series.title
   FROM characters
   INNER JOIN series 
   ON characters.series_id = series.id
-  WHERE characters.species = 'human'
-  GROUP BY characters.species 
-  ORDER BY species_occurrence DESC;
+  WHERE COUNT(characters.species = 'human')
+  GROUP BY characters.species;
   "
 end
     
