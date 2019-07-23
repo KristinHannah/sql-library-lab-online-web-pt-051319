@@ -51,8 +51,6 @@ end
 #ORDER BY
 #LIMIT
     
-    SELECT Count(*) FROM YourTable WHERE Position = 'Manager'
-    
 def select_character_names_and_number_of_books_they_are_in
   "SELECT characters.name, COUNT(character_books.id) AS book_count
   FROM character_books
