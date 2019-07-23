@@ -42,15 +42,16 @@ end
 #LIMIT
 
 def select_series_title_with_most_human_characters
-  "SELECT series.title, COUNT(characters.species)
+  "SELECT series.title, COUNT(characters.species) AS species_occurrence
   FROM characters 
   INNER JOIN series 
   ON characters.series_id = series.id
   WHERE characters.species = 'human'
-  GROUP BY characters.species;
+  GROUP BY characters.species 
+  ORDER BY species_occurrence DESC;
   "
 end
-
+    
 def select_character_names_and_number_of_books_they_are_in
   "SELECT characters.name, COUNT(character_books.id)
   FROM character_books
